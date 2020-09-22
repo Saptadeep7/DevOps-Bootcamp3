@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CalculatorService {
-	int a = 15, b = 60;
+	int a = 60, b = 15;
 
 	@GetMapping("/add")
 	public int add() {
