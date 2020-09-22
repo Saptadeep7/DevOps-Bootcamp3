@@ -11,6 +11,6 @@ public class Application {
 
 	public static void main(String[] args) {
 		log.info("Main method has been invoked");
-		SpringApplication.run(Application.class,args);
+		SpringApplication.run(Application.class, args);
 	}
 }
