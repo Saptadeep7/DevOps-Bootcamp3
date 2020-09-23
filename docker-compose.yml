@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  mysql-service:
+    image: mysql:5.7
+    networks:
+      - bootcamp3-mysql-network
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootcamp3
+  web-service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    networks:
+      - bootcamp3-mysql-network
+    depends_on:
+      - mysql-service
+networks:
+  bootcamp3-mysql-network:
+    driver: bridge
