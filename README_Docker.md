@@ -1,4 +1,5 @@
-# Docker Version
+# Docker
+### Docker Version
 
 ```
 docker --version
@@ -6,7 +7,7 @@ docker --version
 
 ![image](https://user-images.githubusercontent.com/12189997/94017723-62724380-fdcd-11ea-894f-cf420e6b37f7.png)
 
-# Docker Build
+### Docker Build
 
 ```
 docker build -t bootcamp3:1.0.0 .
@@ -14,7 +15,7 @@ docker build -t bootcamp3:1.0.0 .
 
 ![image](https://user-images.githubusercontent.com/12189997/94020627-c1858780-fdd0-11ea-9ce6-676be1cfffb4.png)
 
-# Docker Images
+### Docker Images
 
 ```
 docker images
