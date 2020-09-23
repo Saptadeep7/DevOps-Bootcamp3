@@ -2,18 +2,18 @@
 ### Docker Version
 
 ```
-docker --version
+docker-compose --version
 ```
 
-![image](https://user-images.githubusercontent.com/12189997/94017723-62724380-fdcd-11ea-894f-cf420e6b37f7.png)
+![image](https://user-images.githubusercontent.com/12189997/94041367-c7d32e00-fde7-11ea-8466-42c3c3f768f4.png)
 
-### Docker Build
+### Docker Compose Build
 
 ```
-docker build -t bootcamp3:1.0.0 .
+docker-compose up --build
 ```
 
-![image](https://user-images.githubusercontent.com/12189997/94020627-c1858780-fdd0-11ea-9ce6-676be1cfffb4.png)
+![image](https://user-images.githubusercontent.com/12189997/94041133-732fb300-fde7-11ea-9202-8826dd072b10.png)
 
 ### Docker Images
 
@@ -21,4 +21,4 @@ docker build -t bootcamp3:1.0.0 .
 docker images
 ```
 
-![image](https://user-images.githubusercontent.com/12189997/94020812-f85b9d80-fdd0-11ea-9ba5-d88e314958a4.png)
+![image](https://user-images.githubusercontent.com/12189997/94041566-0668e880-fde8-11ea-84af-f6fd1fb01f83.png)
