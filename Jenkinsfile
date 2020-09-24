@@ -1,3 +1,4 @@
+import java.net.URLEncoder
 pipeline {
     agent any
     options {
@@ -14,9 +15,10 @@ pipeline {
         stage('Build & Test'){
             steps {
                 script {
-                    withMaven(maven : 'apache-maven-3.6.3') {
-                        bat "mvn clean package"
-                    }
+                    def mavenHome = tool name: 'maven-3', type:'maven'
+                    mavenHome = URLEncoder.encode("${mavenHome}","UTF-8")
+                    def mavenCMD = "${mavenHome}/bin/mvn"
+                    bat "${mavenCMD} clean package" 
                 }
             }           
         }
