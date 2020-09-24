@@ -33,7 +33,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    withCredentials([file(credentialsId: 'DockerHub', variable: 'dockerHubPwd')]) {
+                    withCredentials([string(credentialsId: 'DockerHub', variable: 'dockerHubPwd')]) {
                         sh 'docker login -u saptadeep7 -p ${dockerHubPwd}'
                     }
                     sh 'docker push saptadeep7/bootcamp3:1.0.2'
