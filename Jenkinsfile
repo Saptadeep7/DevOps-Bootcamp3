@@ -7,15 +7,14 @@ pipeline {
     stages {
         stage('Checkout'){
             steps {
-                git branch: 'master', url: 'https://github.com/shubhamkushwah123/war-test.git'
+                git branch: 'master', url: 'https://github.com/Saptadeep7/bootcamp3.git'
             }
         }
         
         stage('Build & Test'){
             steps {
                 script {
-                    def mavenHome = tool name: 'maven-3', type:'maven'
-                    def mavenCMD = "${mavenHome}/bin/mvn"
+                    withMaven(maven : 'apache-maven-3.6.1') {
                     sh "${mavenCMD} clean package" 
                 }
             }           
