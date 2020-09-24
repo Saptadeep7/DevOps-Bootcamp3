@@ -16,7 +16,7 @@ pipeline {
                 script {
                     def mavenHome = tool name: 'maven-3', type:'maven'
                     def mavenCMD = "${mavenHome}/bin/mvn"
-                    sh "${mavenCMD} clean package" 
+                    bat "${mavenCMD} clean package" 
                 }
             }           
         }
@@ -24,7 +24,7 @@ pipeline {
         stage('Build Docker Image'){
             steps {
                 script {
-                    sh 'docker build -t saptadeep7/bootcamp3:1.0.1 .'
+                    bat 'docker build -t saptadeep7/bootcamp3:1.0.1 .'
                 }
             }
         }
@@ -33,9 +33,9 @@ pipeline {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'DockerHub', variable: 'dockerHubPwd')]) {
-                        sh 'docker login -u saptadeep7 -p ${dockerHubPwd}'
+                        bat 'docker login -u saptadeep7 -p ${dockerHubPwd}'
                     }
-                    sh 'docker push saptadeep7/bootcamp3:1.0.0'
+                    bat 'docker push saptadeep7/bootcamp3:1.0.0'
                 }
             }
         }
