@@ -4,7 +4,7 @@ pipeline {
         timeout(time:1, unit: 'HOURS')
         skipStagesAfterUnstable()
     }
-    stages{
+    stages {
         stage('Checkout'){
             steps {
                 git branch: 'master', url: 'https://github.com/shubhamkushwah123/war-test.git'
@@ -37,6 +37,14 @@ pipeline {
                     }
                     sh 'docker push saptadeep7/bootcamp3:1.0.0'
                 }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                cleanWs()
             }
         }
     }
