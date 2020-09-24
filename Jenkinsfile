@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     def mavenHome = tool name: 'maven-3', type:'maven'
-                    mavenHome = URLEncoder.encode("${mavenHome}","UTF-8")
+                    mavenHome = URLEncoder.encode(mavenHome,"UTF-8")
                     def mavenCMD = "${mavenHome}/bin/mvn"
                     bat "${mavenCMD} clean package" 
                 }
