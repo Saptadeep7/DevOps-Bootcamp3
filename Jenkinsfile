@@ -25,7 +25,7 @@ pipeline {
         stage('Build Docker Image'){
             steps {
                 script {
-                    sh 'docker build -t saptadeep7/bootcamp3:1.0.2 .'
+                    sh "docker build -t saptadeep7/bootcamp3:1.0.${BUILD_NUMBER} ."
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'DockerHub', variable: 'dockerHubPwd')]) {
                         sh 'docker login -u saptadeep7 -p ${dockerHubPwd}'
                     }
-                    sh 'docker push saptadeep7/bootcamp3:1.0.2'
+                    sh "docker push saptadeep7/bootcamp3:1.0.${BUILD_NUMBER}"
                 }
             }
         }
