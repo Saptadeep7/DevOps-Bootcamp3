@@ -14,9 +14,9 @@ pipeline {
         stage('Build & Test'){
             steps {
                 script {
-                    def mavenHome = tool name: 'maven-3', type:'maven'
-                    def mavenCMD = "${mavenHome}/bin/mvn"
-                    bat "${mavenCMD} clean package" 
+                    withMaven(maven : 'apache-maven-3.6.3') {
+                        bat "mvn clean package"
+                    }
                 }
             }           
         }
